@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <title>
       {% block title %}
@@ -31,26 +32,26 @@
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="container">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="{% url 'index' %}">Daily Shop</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="{% url 'index' %}">Home</a>
                 </li>
                <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
                 </li>
-              <li class="nav-item">
-                    <a class="nav-link" href="#">Employee Register</a>
+              
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'employee_register' %}">Employee Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Owner Register</a>
+                    <a class="nav-link" href="{% url 'owner_register' %}">Owner Register</a>
                 </li>
                
-
 
             </ul>
         </div>
@@ -66,9 +67,9 @@
         {% endfor %}
     {% endif %}
 </div>
-<div class="container">
+<div class="container mt-5 my-5">
     {% block contents %}
-{% endblock  %}
+    {% endblock  %}
 
 </div>
 

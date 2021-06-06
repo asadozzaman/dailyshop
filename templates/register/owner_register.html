@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block contents %}
+{% load widget_tweaks %}
+
+<h1>OWNER</h1>
+    <form action="{% url 'owner_register' %}" method="POST" novalidate>
+        {% csrf_token %}
+           {% for field in form.visible_fields %}
+             <div class="form-group">
+                 {{ field.label_tag }}
+                    {% render_field field class="form-control" %}
+                      {% for error in field.errors %}
+                        <span style="color:rgb(255, 52, 52)">{{ error }}</span>
+                      {% endfor %}
+           {% endfor %}
+           <br>
+               <input type="submit" value="Register" class="btn btn-block btn-primary">
+             </div>
+      </form>
+{% endblock %}
